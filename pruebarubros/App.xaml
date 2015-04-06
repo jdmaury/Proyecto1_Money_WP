@@ -1,0 +1,76 @@
+﻿<Application 
+    x:Class="pruebarubros.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"       
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone">
+
+    <!--Recursos de la aplicación-->
+    <Application.Resources>
+        <Style x:Key="LayoutGridStyle" TargetType="Grid">
+            <Setter Property="Background">
+                <Setter.Value>
+                    <ImageBrush ImageSource="fondo3.jpg"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <DataTemplate x:Name="ListPickerFullModeItemTemplate">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{Binding id}" />
+            </StackPanel>
+        </DataTemplate>
+
+
+        <Style x:Key="LayoutGridStyle2" TargetType="Grid" >
+            <Setter Property="Background">
+                <Setter.Value>
+                    <ImageBrush ImageSource="fondo2.png"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
+
+        <Style x:Key="LayoutButtonStyle" TargetType="Button">
+            <Setter Property="Background">
+                <Setter.Value>
+                    <ImageBrush ImageSource="settings.png"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+
+        <Style x:Key="LayoutStackStyle" TargetType="StackPanel">
+            <Setter Property="Background">
+                <Setter.Value>
+                    <ImageBrush ImageSource="savemoney.png"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+
+    </Application.Resources>
+
+    <Application.ApplicationLifetimeObjects>
+        <!--Objeto requerido que controla los eventos de duración de la aplicación-->
+        <shell:PhoneApplicationService 
+            Launching="Application_Launching" Closing="Application_Closing" 
+            Activated="Application_Activated" Deactivated="Application_Deactivated"/>
+    </Application.ApplicationLifetimeObjects>
+
+</Application>

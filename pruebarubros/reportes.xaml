@@ -1,0 +1,92 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="pruebarubros.reportes"
+    
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    xmlns:toolkitt="clr-namespace:Coding4Fun.Toolkit.Controls;assembly=Coding4Fun.Toolkit.Controls"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d" d:DesignHeight="768" d:DesignWidth="480"
+
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot es la cuadrícula raíz donde se coloca todo el contenido de la página-->
+    <Grid x:Name="LayoutRoot"  Style="{StaticResource LayoutGridStyle2}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        
+        
+
+        <!--TitlePanel contiene el nombre de la aplicación y el título de la página-->
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28"></StackPanel>
+
+        <!--ContentPanel. Colocar aquí el contenido adicional-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0"  Style="{StaticResource LayoutGridStyle2}">
+            
+            <TextBlock FontSize="21" Height="47" TextAlignment="Left" HorizontalAlignment="Left" Margin="28,29,0,0" Name="textBlock2" Text="Escoja el ciclo a revisar" VerticalAlignment="Top" Width="422" />
+            <TextBlock Height="305" TextAlignment="Left" HorizontalAlignment="Left" Margin="-12,59,0,0" Name="textBlock1" Text="" VerticalAlignment="Top" Width="462" />
+
+            
+
+
+
+            
+            <toolkitt:RoundButton Margin="300,12,0,0" Click="button1_Click"  Background="DarkSlateGray">
+                
+            </toolkitt:RoundButton>
+            <ListBox x:Name="listBox1"  Height="292" HorizontalAlignment="Left" Margin="0,425,0,0"  FontSize="12" VerticalAlignment="Top" Width="460">
+                <ListBox.ItemTemplate>
+                    <DataTemplate  >
+                        <StackPanel  Margin="40,0,0,0">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock  Text="{Binding id}" Margin="5" FontSize="{StaticResource PhoneFontSizeSmall }" Width="70" TextAlignment="Center"/>
+                                <TextBlock  Text="{Binding nombre}" Margin="5" FontSize="{StaticResource PhoneFontSizeSmall }" Width="70" TextAlignment="Center"/>
+                                <TextBlock  Text="{Binding valorpresupuestado}" Margin="5" FontSize="{StaticResource PhoneFontSizeSmall}" Width="80" TextAlignment="Center"/>
+                                <TextBlock  Text="{Binding valoractual}" Margin="5" FontSize="{StaticResource PhoneFontSizeSmall}" Width="80" TextAlignment="Center"/>
+                                <TextBlock  Text="{Binding tipoo}" Margin="5" FontSize="{StaticResource PhoneFontSizeSmall}" Width="80" TextAlignment="Center" />
+                            </StackPanel>
+
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+            <toolkit:ListPicker  CacheMode="BitMapCache" ExpansionMode="ExpansionAllowed" FontSize="20"  Margin="264,6,140,488" Name="listPicker2" SelectionMode="Single" FontWeight="Bold" >
+                <toolkit:ListPicker.FullModeItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Margin="20,0,0,0">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Margin="16" Name="prueba" Text="{Binding}" TextAlignment="Right" />
+                            </StackPanel>
+                        </StackPanel>
+                    </DataTemplate>
+                </toolkit:ListPicker.FullModeItemTemplate>
+            </toolkit:ListPicker>
+            <Button Content="Reporte por rubro" Height="68" HorizontalAlignment="Left" Margin="231,397,0,0" Name="button2" FontSize="18" VerticalAlignment="Top" Width="204" Click="button2_Click_1" />
+            <toolkit:ListPicker x:Name="listPicker1" CacheMode="BitMapCache" Header="Rubro" Margin="28,370,231,20"  SelectionMode="Single" ExpansionMode="ExpansionAllowed" FontSize="20" FontWeight="Bold">
+                <toolkit:ListPicker.FullModeItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Margin="40,0,0,0">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock x:Name="prueba" Margin="16" Text="{Binding}" />
+                            </StackPanel>
+                        </StackPanel>
+                    </DataTemplate>
+                </toolkit:ListPicker.FullModeItemTemplate>
+            </toolkit:ListPicker>
+        </Grid>
+    </Grid>
+
+    <!--Código de ejemplo que muestra el uso de ApplicationBar-->
+    
+
+</phone:PhoneApplicationPage>
